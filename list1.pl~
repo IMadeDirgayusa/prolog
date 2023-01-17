@@ -1,0 +1,4 @@
+% MANIPULASI LIST
+
+find(X,[X]).
+findlast(X,[_|T]) :- find(X,T).

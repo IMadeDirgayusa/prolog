@@ -1,0 +1,45 @@
+pria(mukti).
+pria(samid).
+pria(galih).
+pria(deri).
+pria(agung).
+pria(gamma).
+pria(yuti).
+perempuan(jajuk).
+perempuan(luna).
+perempuan(maya).
+perempuan(mia).
+perempuan(yuti).
+
+anak(samid,mukti).
+anak(galih,samid).
+anak(maya,jajuk).
+
+anak(deri,samid).
+anak(luna,samid).
+anak(agung,samid).
+
+anak(deri,jajuk).
+anak(luna,jajuk).
+anak(agung,jajuk).
+
+anak(mia,galih).
+anak(gamma,deri).
+anak(yuti,maya).
+adopt(galih,jajuk).
+adopt(maya,samid).
+
+
+suami(X,Y):- pria(X), perempuan(Y), anak(A,X), anak(A,Y).
+saudarakandung(A,B) :- anak(A,X), anak(B,X), anak(A,Y),anak(B,Y),suami(X,Y).
+saudaratiri(A,C) :- anak(A,X), anak(C,Y),adopt(A,Y),suami(X,Y).
+paman(X,A) :- pria(x), saudarakandung(X,Y), anak(A,Y).
+bibi(Y,A) :- perempuan(Y), anak(A,X), saudarakandung(Y,X).
+kakek(X,A) :- pria(X), anak(A,Y), anak(Y,X).
+cucu(A,X) :- anak(A,Y), anak(Y,X).
+
+
+
+
+
+

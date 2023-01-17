@@ -1,0 +1,9 @@
+pria(udin).
+pria(beni).
+wanita(yuki).
+
+ortu(udin,beni).
+ortu(yuki,beni).
+
+ibu(x,y) :- wanita(x), ortu(x,y).
+ayah(x,y) :- pria(x), ortu(x,y).
